@@ -35,11 +35,11 @@
     <header>
         <nav class="ul-flex">
             <div>
-                <a href="registration">Registration Page</a>
-                <a href="login">Login Page</a>
+                <a class="header-link" href="registration">Registration Page</a>
+                <a class="header-link" href="login">Login Page</a>
             </div>
             <div>
-                <a href="logoutServlet">Logout</a>
+                <a class="header-link" href="logoutServlet">Logout</a>
             </div>
         </nav>
     </header>

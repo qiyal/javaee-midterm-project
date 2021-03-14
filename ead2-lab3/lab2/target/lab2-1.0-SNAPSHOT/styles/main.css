@@ -7,15 +7,16 @@ header {
 
 .ul-flex {
     display: flex;
+    justify-content: space-between;
 }
 
-.ul-flex > div > a {
+.header-link {
     margin-right: 20px;
     text-decoration: none;
     color: #151414;
 }
 
-.ul-flex > div > a:hover {
+.header-link:hover {
     color: #fff;
 }
 

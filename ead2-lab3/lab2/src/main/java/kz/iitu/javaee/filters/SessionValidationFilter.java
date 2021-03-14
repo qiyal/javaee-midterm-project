@@ -1,15 +1,10 @@
 package kz.iitu.javaee.filters;
 
-import kz.iitu.javaee.models.User;
-import kz.iitu.javaee.models.UserList;
-
 import javax.servlet.*;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Enumeration;
 
 
 public class SessionValidationFilter implements Filter {
