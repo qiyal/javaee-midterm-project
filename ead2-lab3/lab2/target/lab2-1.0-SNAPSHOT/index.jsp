@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" import ="java.util.*" %>
+<%@ page import="kz.iitu.javaee.models.Book" %>
+<%@ page import="kz.iitu.javaee.dao.BookDao" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -10,27 +12,7 @@
 </head>
 <body>
 
-    <%
-        Cookie [] cookies = request.getCookies();
-        String username = null;
-        String password = null;
 
-
-        if (request.getAttribute("status") != null && request.getAttribute("status").equals("registration")) {
-            username = (String) request.getAttribute("username");
-            password = (String) request.getAttribute("password");
-        } else {
-            System.out.println("SET cokies");
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("username")) {
-                    username = cookie.getValue();
-                }
-                if (cookie.getName().equals("password")) {
-                    password = cookie.getValue();
-                }
-            }
-        }
-    %>
 
     <header>
         <nav class="ul-flex">
@@ -44,13 +26,27 @@
         </nav>
     </header>
 
-    <div class="form-box">
-        <div class="main-box">
-            <p>Username: <span><%= username %></span></p>
-            <p>Password: <span><%= password %></span></p>
+        <div class="flex-box">
+            <%
+                BookDao bookDao = new BookDao();
+                ArrayList<Book> books = (ArrayList<Book>) bookDao.selectAllBooks();
+
+                String res = "";
+                for (Book book : books) {
+                    StringBuilder code = new StringBuilder();
+                    code.append("<div class=\"card\">\n");
+                    code.append("    <div class=\"cart-img\">\n");
+                    code.append("        <img src=\"" + book.getUrlImage() + "\" alt=\"book image\">\n");
+                    code.append("    </div>\n");
+                    code.append("    <div class=\"cart-info\">\n");
+                    code.append("        <span class=\"cart-item-name\">" + book.getName() + "</span>\n");
+                    code.append("        <span class=\"price\">Price: " + book.getCost() + "</span>\n");
+                    code.append("    </div>\n");
+                    code.append("</div>\n");
+                    res += code + "\n";
+                }
+                out.println(res);
+            %>
         </div>
-    </div>
-
-
 </body>
 </html>

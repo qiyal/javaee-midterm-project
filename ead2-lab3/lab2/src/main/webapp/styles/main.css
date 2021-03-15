@@ -62,3 +62,23 @@ form > button {
     text-align: center;
     color: #be1717;
 }
+
+.flex-box {
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
+}
+
+.cart {
+    width: 290px;
+    height: 413px;
+}
+
+.cart-img {
+    width: 100%;
+    text-align: center;
+}
+
+.cart-img > img {
+    width: 100%;
+}

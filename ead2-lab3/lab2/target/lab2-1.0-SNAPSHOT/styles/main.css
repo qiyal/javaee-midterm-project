@@ -14,7 +14,7 @@ header {
     margin-right: 20px;
     text-decoration: none;
     color: #151414;
-}
+}x
 
 .header-link:hover {
     color: #fff;
@@ -61,4 +61,24 @@ form > button {
 .error {
     text-align: center;
     color: #be1717;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
+}
+
+.cart {
+    width: 290px;
+    height: 413px;
+}
+
+.cart-img {
+    width: 100%;
+    text-align: center;
+}
+
+.cart-img > img {
+    width: 100%;
 }
