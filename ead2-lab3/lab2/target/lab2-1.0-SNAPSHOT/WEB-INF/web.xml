@@ -61,6 +61,16 @@
         <url-pattern>/book</url-pattern>
     </servlet-mapping>
 
+<!--  CartServlet  -->
+    <servlet>
+        <servlet-name>cartServlet</servlet-name>
+        <servlet-class>kz.iitu.javaee.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+
 
 
     <!--  Filters  -->
@@ -71,6 +81,8 @@
     <filter-mapping>
         <filter-name>sessionValidationFilter</filter-name>
         <url-pattern>/main</url-pattern>
+        <url-pattern>/</url-pattern>
+        <url-pattern>/book</url-pattern>
         <url-pattern>/</url-pattern>
     </filter-mapping>
 

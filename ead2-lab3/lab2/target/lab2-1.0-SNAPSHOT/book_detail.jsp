@@ -43,6 +43,13 @@
     <div class="ul-flex">
         <%= str %>
     </div>
+
+    <div>
+        <form action="book" method="post">
+            <%= "<input type=\"hidden\" name=\"book_id\" value=\"" + id + "\">" %>
+            <button type="submit">Add to cart</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>
