@@ -30,6 +30,12 @@
     </form>
 </div>
 
+<%
+    if ((String)request.getAttribute("status") != null && ((String)request.getAttribute("status")).equals("false")) {
+        out.println("<p class=error>Login already  exist!</p>");
+    }
+%>
+
 
 </body>
 </html>

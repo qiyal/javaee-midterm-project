@@ -44,4 +44,25 @@ public class BookDao {
         }
         return books;
     }
+
+    public Book selectBook(Integer id) {
+        Book book = new Book();
+        String sql = "SELECT * FROM book WHERE book_id = " + id;
+        try {
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Integer book_id = resultSet.getInt("book_id");
+                String name = resultSet.getString("name");
+                Integer cost = resultSet.getInt("cost");
+                String urlImage = resultSet.getString("urlImage");
+                book = new Book(book_id, name, cost, urlImage);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return book;
+    }
 }

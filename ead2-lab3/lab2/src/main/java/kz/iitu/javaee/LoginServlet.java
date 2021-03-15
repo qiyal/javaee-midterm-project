@@ -3,6 +3,7 @@ package kz.iitu.javaee;
 import kz.iitu.javaee.dao.UserDao;
 import kz.iitu.javaee.models.User;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
@@ -22,19 +23,16 @@ public class LoginServlet extends HttpServlet {
             String password = req.getParameter("password");
             String status = "false";
 
-            ArrayList<User> users = (ArrayList<User>) userDao.selectAllUser();
-
-            for (User user : users) {
-                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                if (userDao.checkUser(username, password)) {
                     req.setAttribute("status", "true");
                     session.setAttribute("IS_AUTH", username);
                     String path = req.getContextPath() + "/main";
                     resp.sendRedirect(path);
                 } else {
                     req.setAttribute("status", "false");
+                    RequestDispatcher view = req.getRequestDispatcher("login.jsp");
+                    view.forward(req, resp);
                 }
-            }
-
     }
 
     @Override

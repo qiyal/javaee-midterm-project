@@ -5,16 +5,37 @@ header {
     box-sizing: border-box;
 }
 
+.div_main {
+    margin-top: 50px;
+}
+
 .ul-flex {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.title {
+    text-align: center;
+}
+
+.book_card {
+
+}
+
+.book_img {
+    width: 219px;
+}
+
+.image_book {
+    width: 100%;
 }
 
 .header-link {
     margin-right: 20px;
     text-decoration: none;
     color: #151414;
-}x
+}
 
 .header-link:hover {
     color: #fff;
@@ -63,22 +84,3 @@ form > button {
     color: #be1717;
 }
 
-.flex-box {
-    display: flex;
-    justify-content: space-between;
-    /*align-items: center;*/
-}
-
-.cart {
-    width: 290px;
-    height: 413px;
-}
-
-.cart-img {
-    width: 100%;
-    text-align: center;
-}
-
-.cart-img > img {
-    width: 100%;
-}

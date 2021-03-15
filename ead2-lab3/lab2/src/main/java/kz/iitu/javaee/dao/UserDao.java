@@ -57,6 +57,21 @@ public class UserDao {
         }
     }
 
+    public void createUser(User user) {
+        String INSERT_USERS_SQL = "INSERT INTO user" + "  (login, password) VALUES "
+                + " (?, ?);";
+        try {
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
+            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(2, user.getPassword());
+            System.out.println(preparedStatement);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public List<User> selectAllUser() {
         List<User> users = new ArrayList<User>();
         String sql = "SELECT * FROM user";
@@ -70,10 +85,54 @@ public class UserDao {
                 String name = resultSet.getString("login");
                 String password = resultSet.getString("password");
                 users.add(new User(id, name, password));
+                System.out.println(name);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return users;
+    }
+
+    public boolean checkLogin(String login) {
+        String sql = "SELECT * FROM user WHERE login = '" + login + "'";
+        boolean ans = false;
+        try {
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                String name = resultSet.getString("login");
+                if (name.equals(login)) {
+                    ans = true;
+                    break;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
+    public boolean checkUser(String login, String password) {
+        String sql = "SELECT * FROM user WHERE login = '" + login + "' AND password = '" + password + "'";
+        boolean ans = false;
+        try {
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                String name = resultSet.getString("login");
+                String password1 = resultSet.getString("password");
+                if (name.equals(login) && password1.equals(password)) {
+                    ans = true;
+                    break;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ans;
     }
 }

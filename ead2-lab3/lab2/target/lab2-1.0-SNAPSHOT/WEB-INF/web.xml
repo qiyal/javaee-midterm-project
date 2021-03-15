@@ -51,6 +51,17 @@
         <url-pattern>/logoutServlet</url-pattern>
     </servlet-mapping>
 
+<!--  BookServlet  -->
+    <servlet>
+        <servlet-name>bookServlet</servlet-name>
+        <servlet-class>kz.iitu.javaee.BookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>bookServlet</servlet-name>
+        <url-pattern>/book</url-pattern>
+    </servlet-mapping>
+
+
 
     <!--  Filters  -->
     <filter>
@@ -70,6 +81,7 @@
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
         <url-pattern>/login</url-pattern>
+        <url-pattern>/registration</url-pattern>
     </filter-mapping>
 
 
