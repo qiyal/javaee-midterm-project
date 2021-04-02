@@ -9,7 +9,7 @@ import java.util.List;
 public class BookDao {
     private String url = "jdbc:mysql://localhost:3306/spring?useSSL=false";;
     private String username = "root";
-    private String password = "mysqlUsernamePassword";
+    private String password = "nur26erb";
 
     protected Connection getConnection() {
         Connection connection = null;

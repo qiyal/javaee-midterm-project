@@ -71,6 +71,15 @@
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
 
+<!--  CartServlet  -->
+    <servlet>
+        <servlet-name>profileServlet</servlet-name>
+        <servlet-class>kz.iitu.javaee.ProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>profileServlet</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
 
 
     <!--  Filters  -->
@@ -83,7 +92,8 @@
         <url-pattern>/main</url-pattern>
         <url-pattern>/</url-pattern>
         <url-pattern>/book</url-pattern>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/cart</url-pattern>
+        <url-pattern>/profile</url-pattern>
     </filter-mapping>
 
     <filter>

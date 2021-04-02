@@ -6,7 +6,7 @@ header {
 }
 
 .div_main {
-    margin-top: 50px;
+    margin: 50px 0;
 }
 
 .ul-flex {
@@ -84,3 +84,22 @@ form > button {
     color: #be1717;
 }
 
+.user-avatar {
+    width: 100px;
+    height: 100px;
+}
+
+.user-avatar > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+footer {
+    /*margin-top: 50px;*/
+    width: calc(100% - 20px);
+    position: absolute;
+    bottom: 10px;
+    padding: 20px 20px;
+    background-color: #d7b622;
+    box-sizing: border-box;
+}

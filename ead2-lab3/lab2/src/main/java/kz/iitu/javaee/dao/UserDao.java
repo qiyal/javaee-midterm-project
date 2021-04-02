@@ -16,7 +16,7 @@ public class UserDao {
     public UserDao() {
         this.url = "jdbc:mysql://localhost:3306/spring?serverTimezone=UTC";
         this.username="root";
-        this.password="mysqlUsernamePassword";
+        this.password="nur26erb";
     }
 
     protected Connection getConnection() {
@@ -91,6 +91,30 @@ public class UserDao {
             e.printStackTrace();
         }
         return users;
+    }
+
+    public User selectUser(String login) {
+        User user = null;
+        String sql = "SELECT * FROM user WHERE login = \'" + login + "\'";
+
+        try {
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt("id");
+                String name = resultSet.getString("login");
+                String password = resultSet.getString("password");
+                String url = resultSet.getString("image_url");
+                user = new User(id, name, password, url);
+                System.out.println(name);
+                break;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 
     public boolean checkLogin(String login) {

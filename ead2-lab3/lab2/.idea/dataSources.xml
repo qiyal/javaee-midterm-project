@@ -13,5 +13,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/spring?serverTimezone=UTC</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="spring@localhost [2]" uuid="8b160ff8-341b-4c44-859f-043e92e9a1d6">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/spring?serverTimezone=UTC</jdbc-url>
+    </data-source>
   </component>
 </project>

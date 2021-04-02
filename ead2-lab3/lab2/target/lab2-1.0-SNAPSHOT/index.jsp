@@ -1,7 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" import ="java.util.*" %>
 <%@ page import="kz.iitu.javaee.models.Book" %>
-<%@ page import="kz.iitu.javaee.dao.BookDao" %>
-<%@ page import="kz.iitu.javaee.dao.UserDao" %>
+<jsp:useBean id="bookDao" scope="session" class="kz.iitu.javaee.dao.BookDao" />
+
+<%
+    List<Book> books = bookDao.selectAllBooks();
+    String s = "";
+%>
 
 <html>
 <head>
@@ -10,9 +14,6 @@
 </head>
 <body>
     <%
-        BookDao bookDao = new BookDao();
-        List<Book> books = bookDao.selectAllBooks();
-        String s = "";
         for(Book b : books) {
             String str = "<div class=\"book_card\">\n" +
                     "                <div class=\"book_img\">\n" +
@@ -28,22 +29,23 @@
         }
     %>
 
-    <header>
-        <nav class="ul-flex">
-            <div>
-                <a class="header-link" href="registration">Cart</a>
-            </div>
-            <div>
-                <a class="header-link" href="logoutServlet">Logout</a>
-            </div>
-        </nav>
-    </header>
+    <%@ include file="header.jsp"%>
 
     <div class="div_main">
         <h1 class="title">Books</h1>
         <div class="ul-flex">
             <%= s %>
         </div>
+
+<%--        <div>--%>
+<%--            <h1>Example</h1>--%>
+<%--            <jsp:forward page="book_detail.jsp">--%>
+<%--                <jsp:param name="book_id" value="5"/>--%>
+<%--            </jsp:forward>--%>
+<%--        </div>--%>
     </div>
+
+    <%@ include file="footer.jsp"%>
+
 </body>
 </html>

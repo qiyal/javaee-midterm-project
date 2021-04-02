@@ -4,6 +4,7 @@ public class User {
     private Integer id;
     private String username;
     private String password;
+    private String imageUrl;
 
     public User() {}
 
@@ -16,6 +17,13 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
+    }
+
+    public User(Integer id, String username, String password, String imageUrl) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.imageUrl = imageUrl;
     }
 
     public Integer getId() {
@@ -40,5 +48,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

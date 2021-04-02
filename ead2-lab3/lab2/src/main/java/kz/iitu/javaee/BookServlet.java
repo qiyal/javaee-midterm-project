@@ -12,21 +12,29 @@ public class BookServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
         String id = req.getParameter("book_id");
         Cookie[] cookie = req.getCookies();
 
         String s = "";
+        boolean initCookie = false;
+
         for (Cookie cookie1 : cookie) {
             if (cookie1.getName().equals("cart")) {
                 if (cookie1.getValue() == null || cookie1.getValue().equals("")) {
                     s = id;
+                    initCookie = true;
                 } else {
                     s += cookie1.getValue() + "-" + id;
+                    initCookie = true;
                 }
                 break;
             }
         }
+
+        if (!initCookie) {
+            s = id;
+        }
+
         System.out.println("Cooke: " + s);
         resp.addCookie(new Cookie("cart", s));
         String path = req.getContextPath() + "/book?id=" + id;
