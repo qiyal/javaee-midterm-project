@@ -168,8 +168,7 @@ form > button {
     height: auto;
     background-color: #151414;
     color: #fff;
-    border-radius: 10px 10px 5px 5px;
-    overflow: hidden;
+    border-radius: 0 0 5px 5px;
 }
 
 footer {
@@ -388,6 +387,7 @@ footer {
     box-sizing: border-box;
     background: #0eab75;
     font-weight: 600;
+    border-radius: 10px 10px 0 0;
 }
 
 .order-date span {
@@ -404,4 +404,8 @@ footer {
 .order-body span {
     font-weight: normal;
     color: #eeeeee;
+}
+
+.order-items-list {
+
 }

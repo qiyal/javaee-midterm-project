@@ -1,5 +1,6 @@
 <%@ page import="iitu.javaee.javaee_endterm.model.Order" %>
 <%@ page import="java.util.List" %>
+<%@ page import="iitu.javaee.javaee_endterm.model.OrderItem" %>
 <jsp:useBean id="orderService" scope="session" class="iitu.javaee.javaee_endterm.service.OrderService"/>
 
 <%
@@ -32,6 +33,9 @@
         <div class="order-card">
             <div class="order-date">
                 Date: <span>dasd</span>
+            </div>
+            <div class="order-items-list">
+
             </div>
             <div class="order-body">
                 Cost: <span>dsada KZT</span>

@@ -1,25 +1,28 @@
 <%@ page import="iitu.javaee.javaee_endterm.model.Order" %>
 <%@ page import="java.util.List" %>
 <%@ page import="iitu.javaee.javaee_endterm.model.OrderItem" %>
+<%@ page import="iitu.javaee.javaee_endterm.model.OrderWithItems" %>
+<%@ page import="java.util.ArrayList" %>
 <jsp:useBean id="orderService" scope="session" class="iitu.javaee.javaee_endterm.service.OrderService"/>
+<jsp:useBean id="orderWithItemsService" scope="session" class="iitu.javaee.javaee_endterm.service.OrderWithItemsService"/>
 
 <%
     String ordersStr = "";
     String user_id;
-    List<Order> orderList;
+    List<OrderWithItems> orderWithItemsList;
     String s = "";
 %>
 
 <%
     user_id = request.getParameter("user_id_for_get_orders");
-    orderList = orderService.getOrdersByUserId(user_id);
+    orderWithItemsList = orderWithItemsService.getOrderWithItemsByUserId(Integer.parseInt(user_id));
 
-    if (orderList.size() != 0) {
-        for (Order order : orderList) {
+    if (orderWithItemsList.size() != 0) {
+        for (OrderWithItems orderWithItems : orderWithItemsList) {
             s = "   <div class=\"order-card\">\n" +
-                    "    <p><span>Order ID:</span> " + order.getId() + "</p>\n" +
-                    "    <p><span>Total Cost:</span> " + order.getCost() + "</p>\n" +
-                    "    <p><span>Date:</span> " + order.getOrderDay() + "</p>\n" +
+                    "    <p><span>Order ID:</span> " + orderWithItems.getOrder().getId() + "</p>\n" +
+                    "    <p><span>Total Cost:</span> " + orderWithItems.getOrder().getCost() + "</p>\n" +
+                    "    <p><span>Date:</span> " + orderWithItems.getOrder().getOrderDay() + "</p>\n" +
                     "</div>";
             ordersStr += s;
         }
@@ -43,7 +46,7 @@
         </div>
     </div>
     <%
-        if (orderList.size() != 0) {
+        if (orderWithItemsList.size() != 0) {
     %>
     <div class="ul-flex">
         <%= ordersStr %>

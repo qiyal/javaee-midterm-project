@@ -6,3 +6,6 @@ INSERT INTO `book` (`name`, `cost`, `url_image`) VALUES ('Book#2', '5000', './im
 INSERT INTO `book` (`name`, `cost`, `url_image`) VALUES ('Book#3', '3990', './images/img3.jpg');
 INSERT INTO `book` (`name`, `cost`, `url_image`) VALUES ('Book#4', '4990', './images/img4.jpg');
 INSERT INTO `book` (`name`, `cost`, `url_image`) VALUES ('Book#5', '2000', './images/img5.jpg');
+
+
+
