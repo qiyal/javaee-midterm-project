@@ -22,7 +22,12 @@
             "                <div class=\"\">\n" +
             "                    <p class=\"book-p\">Name: <span>" + b.getName() + "</span></p>\n" +
             "                    <p class=\"book-p\">Price: <span>" + b.getCost() + "</span></p>\n" +
-            "                    <a class=\"book-link\" href=\"book?id=" +b.getId()+ "\">Show detail</a>" +
+            "                    <div class=\"div-action\">\n" +
+            "                       <form class=\"btn-add-to-cart-form\" action=\"book\" method=\"post\">\n" +
+            "                           <input type=\"hidden\" name=\"book_id\" value=\"" + id + "\">\n" +
+            "                           <button class=\"btn-add-to-cart\" type=\"submit\">Add to cart</button>\n" +
+            "                       </form>\n" +
+            "                    </div>" +
             "                </div>\n" +
             "            </div>";
 %>
@@ -36,13 +41,6 @@
 
     <div class="book-detail-div">
         <%= str %>
-
-        <div class="div-action">
-            <form class="btn-add-to-cart-form" action="book" method="post">
-                <%= "<input type=\"hidden\" name=\"book_id\" value=\"" + id + "\">" %>
-                <button class="btn-add-to-cart" type="submit">Add to cart</button>
-            </form>
-        </div>
     </div>
 
 </div>

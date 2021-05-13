@@ -1,0 +1,8 @@
+    @keyframes profile-img-rotate {
+    0% {
+
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -43,7 +43,7 @@
     <%
         if (s == null || s.equals("")) {
     %>
-        <h1 style="text-align: center">Your cart is empty!</h1>
+        <p class="cart-info-text">Your cart is empty!</p>
     <%
     } else {
     %>

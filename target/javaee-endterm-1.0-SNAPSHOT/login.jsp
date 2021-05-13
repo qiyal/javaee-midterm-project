@@ -14,6 +14,8 @@
 <%--  inlude header.jsp  --%>
 <%@ include file="header.jsp"%>
 
+<h1 class="text-center">Login</h1>
+
 <div class="form-box">
     <form action="login" method="post">
         <label for="username">Username:</label>
@@ -29,10 +31,10 @@
 </div>
 
 <%
-    if (request.getAttribute("error") != null && request.getAttribute("error").equals("NOT_CORRECT_DATA")) {
-        out.println("<p class=error>Username or password is not correct!</p>");
-    }
+    if (request.getParameter("error") != null && request.getParameter("error").equals("NOT_CORRECT_DATA")) {
 %>
+<p class=error>Username or password is not correct!</p>
+<% } %>
 
 <%@ include file="footer.jsp"%>
 

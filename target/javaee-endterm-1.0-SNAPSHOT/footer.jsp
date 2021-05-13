@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
         <nav class="ul-flex">
             <div>
                 <a class="header-link" href="login">Login</a>

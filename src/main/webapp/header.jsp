@@ -1,4 +1,4 @@
-<header>
+<header class="header">
     <nav class="header-nav">
         <div>
             <a class="header-link" href="main">Home</a>

@@ -13,6 +13,8 @@
 <%--  inlude header.jsp  --%>
 <%@ include file="header.jsp"%>
 
+<h1 class="text-center">Registration</h1>
+
 <div class="form-box">
     <form action="registration" method="post">
         <label for="username">Username:</label>
@@ -28,10 +30,10 @@
 </div>
 
 <%
-    if ((String)request.getAttribute("status") != null && ((String)request.getAttribute("status")).equals("false")) {
-        out.println("<p class=error>Login already  exist!</p>");
-    }
+    if (request.getParameter("error") != null && request.getParameter("error").equals("USERNAME_HAS")) {
 %>
+<p class=error>Invalid Username!</p>
+<% } %>
 
     <%@ include file="footer.jsp"%>
 

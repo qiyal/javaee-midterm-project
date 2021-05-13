@@ -2,7 +2,7 @@
 <%@ page import="java.util.List" %>
 <jsp:useBean id="orderService" scope="session" class="iitu.javaee.javaee_endterm.service.OrderService"/>
 
-<%!
+<%
     String ordersStr = "";
     String user_id;
     List<Order> orderList;
@@ -26,6 +26,18 @@
 %>
 
 <div>
+    <h2 class="mg-l-100 mg-t-100">My Orders</h2>
+
+    <div class="order-flex-box">
+        <div class="order-card">
+            <div class="order-date">
+                Date: <span>dasd</span>
+            </div>
+            <div class="order-body">
+                Cost: <span>dsada KZT</span>
+            </div>
+        </div>
+    </div>
     <%
         if (orderList.size() != 0) {
     %>

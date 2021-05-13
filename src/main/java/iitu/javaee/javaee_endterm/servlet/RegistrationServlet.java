@@ -35,17 +35,16 @@ public class RegistrationServlet extends HttpServlet {
         req.setAttribute("username", username);
         req.setAttribute("password", password);
         req.setAttribute("status", status);
+        String path = req.getContextPath() + "/registration?error=USERNAME_HAS";
 
         if (!userService.checkUsername(username)) {
             userService.createUser(username, password);
             req.setAttribute("status", "true");
             session.setAttribute("IS_AUTH", username);
-            String path = req.getContextPath() + "/main";
+            path = req.getContextPath() + "/main";
             resp.sendRedirect(path);
         } else {
-            req.setAttribute("status", "false");
-            RequestDispatcher view = req.getRequestDispatcher("registration.jsp");
-            view.forward(req, resp);
+            resp.sendRedirect(path);
         }
     }
 }
