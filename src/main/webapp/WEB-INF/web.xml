@@ -96,6 +96,26 @@
         <url-pattern>/make-order</url-pattern>
     </servlet-mapping>
 
+    <!--  EditProfileInfo  -->
+    <servlet>
+        <servlet-name>editProfileInfo</servlet-name>
+        <servlet-class>iitu.javaee.javaee_endterm.servlet.EditProfileInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editProfileInfo</servlet-name>
+        <url-pattern>/edit-profile-info</url-pattern>
+    </servlet-mapping>
+
+    <!--  AddComment  -->
+    <servlet>
+        <servlet-name>addComment</servlet-name>
+        <servlet-class>iitu.javaee.javaee_endterm.servlet.AddComment</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addComment</servlet-name>
+        <url-pattern>/add-comment</url-pattern>
+    </servlet-mapping>
+
 
     <!--  Filters  -->
     <filter>
@@ -110,6 +130,7 @@
         <url-pattern>/cart</url-pattern>
         <url-pattern>/profile</url-pattern>
         <url-pattern>/make-order</url-pattern>
+        <url-pattern>/edit-profile-info</url-pattern>
     </filter-mapping>
 
     <filter>

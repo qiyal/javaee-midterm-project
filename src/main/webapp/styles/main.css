@@ -32,6 +32,15 @@ header {
     padding: 0 100px;
 }
 
+.ul-flex-v2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
 .title {
     text-align: center;
 }
@@ -164,11 +173,9 @@ form > button {
 }
 
 .order-card {
-    width: 200px;
+    width: 300px;
     height: auto;
-    background-color: #151414;
     color: #fff;
-    border-radius: 0 0 5px 5px;
 }
 
 footer {
@@ -220,36 +227,34 @@ footer {
 }
 
 .make-order-box {
-    width: 100%;
-    padding: 30px 400px;
+    width: 800px;
+    margin: 0 auto;
+    padding: 30px;
     box-sizing: border-box;
+    background: #151414;
+    border-radius: 20px;
 }
 
 .make-order-body {
-    background: #0eab75;
-    box-sizing: border-box;
-    padding: 15px;
-    border-radius: 10px;
+
 }
 
 .order-items {
-    width: 100%;
-    padding: 10px 100px;
+    width: 300px;
+    padding: 20px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    border-radius: 15px;
+    background: #d7b622;
+    margin: 25px 0;
 }
 
 .order-item-body {
-    width: 250px;
-    background: #151414;
+    width: 100%;
     display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 5px;
+    align-items: start;
     justify-content: space-between;
-    margin: 15px 0;
 }
 
 .order-item-img {
@@ -272,8 +277,9 @@ footer {
 }
 
 .make-order-cost {
+    display: block;
     font-weight: bold;
-    color: #151414;
+    color: #0eab75;
     font-size: 24px;
     line-height: 20px;
 }
@@ -293,12 +299,13 @@ footer {
 }
 
 .btn-make-div {
+    width: 100%;
     text-align: center;
 }
 
 .btn-form-make-order {
+    width: 100%;
     display: inline-block;
-    width: 100px!important;
     padding: 0;
     margin: 0;
     background: transparent!important;
@@ -399,6 +406,8 @@ footer {
     box-sizing: border-box;
     color: #d7b622;
     font-weight: 600;
+    border-radius: 0 0 10px 10px;
+    background-color: #151414;
 }
 
 .order-body span {
@@ -407,5 +416,163 @@ footer {
 }
 
 .order-items-list {
+    background-color: #d7b622;
+}
 
+.order-items-list:last-child {
+    border-bottom: none;
+}
+
+.order-item {
+    box-sizing: border-box;
+    padding: 10px;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-item-name {
+    width: 60%;
+    color: #000;
+}
+
+.order-item-cost {
+    width: 40%;
+    color: #0eab75;
+    font-weight: 600;
+}
+
+.div-edit-profile-info-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    flex-direction: column;
+    /*min-height: 495px;*/
+}
+
+.user-edit-info {
+    width: 600px;
+    background: #151414;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.user-edit-info h2 {
+    color: #eee;
+    margin: 0 0 20px;
+}
+
+.user-edit-info form {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.user-edit-info .label-div {
+    width: 100%;
+    color: #151414;
+    background: #d7b622;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.label-div label {
+    width: 150px;
+}
+
+.label-div input {
+    width: 400px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: inline;
+}
+
+.label-div textarea {
+    width: 400px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: inline;
+}
+
+.label-div input:focus {
+    border: 2px solid #0eab75;
+}
+
+.back-to-btn {
+    display: inline-block;
+    background: #be1717;
+    color: #eee;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+.title-h {
+    font-weight: 600;
+    color: #eee;
+}
+
+.comments-flex {
+    width: 600px;
+    margin: 50px auto 30px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.comments-flex:last-child {
+    margin-bottom: 0;
+}
+
+.comment-card {
+    width: 600px;
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.user {
+    width: 150px;
+    padding: 20px;
+    background: #d7b622;
+    border-radius: 10px 0 0 10px;
+    box-sizing: border-box;
+}
+
+.user-img {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-img img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.user-name {
+    padding: 3px 7px;
+    color: #eee;
+    font-weight: 600;
+    background: #0eab75;
+    border-radius: 15px;
+}
+
+.comment {
+    width: 500px;
+    padding: 20px;
+    background: #151414;
+    color: #eee;
+    box-sizing: border-box;
+    border-radius: 0 15px 15px 0;
 }

@@ -37,24 +37,27 @@
     <h1 class="title">Make Order</h1>
 
     <div class="make-order-box">
-        <div class="make-order-body">
-            <div class="make-order-cost">Cost: <span><%= cost %></span></div>
 
-            <div style="text-align: center; font-size: 22px; line-height: 18px; font-weight: bold">Items</div>
+        <div class="make-order-body">
+
+            <h2 class="title-h">Items</h2>
 
             <div class="order-items">
 
                 <%= items %>
 
             </div>
+
+            <div class="make-order-cost">Cost: <span><%= cost %>KZT</span></div>
         </div>
-        
+
         <div class="btn-make-div">
             <form class="btn-form-make-order" action="make-order" method="post">
                 <%= "<input type=\"hidden\" name=\"username\" value=\"" + session.getAttribute("IS_AUTH") + "\">" %>
                 <button type="submit">MAKE AN ORDER</button>
             </form>
         </div>
+
     </div>
 
 </div>

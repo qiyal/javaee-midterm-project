@@ -7,6 +7,7 @@ import java.util.List;
 public class OrderWithItems implements Serializable {
     private Order order = null;
     private List<OrderItem> orderItemList = new ArrayList<>();
+    private List<Book> bookList = new ArrayList<>();
 
     public OrderWithItems() {
     }
@@ -26,4 +27,14 @@ public class OrderWithItems implements Serializable {
     public void setOrderItemList(List<OrderItem> orderItemList) {
         this.orderItemList = orderItemList;
     }
+
+    public List<Book> getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
+    }
+
+
 }
