@@ -8,7 +8,6 @@
     String ordersStr = "";
     String user_id;
     List<OrderWithItems> orderWithItemsList;
-    String s = "";
 %>
 
 <%
@@ -17,6 +16,7 @@
 
     if (orderWithItemsList.size() != 0) {
         for (OrderWithItems orderWithItems : orderWithItemsList) {
+            String s = "";
             String items = "";
             for (Book book : orderWithItems.getBookList()) {
                 items += "<div class=\"order-item\">\n" +

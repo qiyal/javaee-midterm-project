@@ -116,6 +116,16 @@
         <url-pattern>/add-comment</url-pattern>
     </servlet-mapping>
 
+    <!--  AddComment  -->
+    <servlet>
+        <servlet-name>deleteCartItemServlet</servlet-name>
+        <servlet-class>iitu.javaee.javaee_endterm.servlet.DeleteCartItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteCartItemServlet</servlet-name>
+        <url-pattern>/delete-item-cart</url-pattern>
+    </servlet-mapping>
+
 
     <!--  Filters  -->
     <filter>

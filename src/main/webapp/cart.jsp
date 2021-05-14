@@ -26,7 +26,9 @@
                     "                    <p class=\"book-p\">Name: <span>" + b.getName() + "</span></p>\n" +
                     "                    <p class=\"book-p\">Price: <span>" + b.getCost() + "</span></p>\n" +
                     "                    <a class=\"book-link\" href=\"book?id=" +b.getId()+ "\">Show detail</a>" +
+                    "                    <a href=\"delete-item-cart?book_id=" + b.getId() + "\" class=\"delete-btn\">REMOVE</a>" +
                     "                </div>\n" +
+                    "" +
                     "            </div>";
             books += str + "\n";
         }
@@ -51,7 +53,7 @@
         <%= books %>
     </div>
 
-    <div style="text-align: center">
+    <div style="text-align: center; margin-top: 30px">
         <a class="make-order-btn" href="make-order">Make Order</a>
     </div>
     <%

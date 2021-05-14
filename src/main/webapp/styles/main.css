@@ -240,21 +240,28 @@ footer {
 }
 
 .order-items {
-    width: 300px;
-    padding: 20px;
+    width: 100%;
+    /*padding: 20px;*/
     box-sizing: border-box;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
     border-radius: 15px;
-    background: #d7b622;
+    /*background: #d7b622;*/
     margin: 25px 0;
 }
 
 .order-item-body {
-    width: 100%;
+    width: 300px;
     display: flex;
     align-items: start;
     justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: #d7b622;
+    margin: 0 0 20px;
 }
 
 .order-item-img {
@@ -575,4 +582,16 @@ footer {
     color: #eee;
     box-sizing: border-box;
     border-radius: 0 15px 15px 0;
+}
+
+.delete-btn {
+    background: #be1717;
+    color: #eee;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    border-radius: 10px;
 }

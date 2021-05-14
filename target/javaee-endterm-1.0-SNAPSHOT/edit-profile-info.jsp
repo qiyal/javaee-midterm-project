@@ -51,6 +51,19 @@
             </div>
         </div>
         <div>
+            <%
+                if(request.getParameter("error") != null && request.getParameter("error").equals("password-invalid")) {
+            %>
+            <p class="error">Password invalid!</p>
+            <%
+                } else if (request.getParameter("error") != null && request.getParameter("error").equals("username-invalid")) {
+            %>
+            <p class="error">Username invalid!</p>
+            <%
+                }
+            %>
+        </div>
+        <div>
             <a href="profile" class="back-to-btn">BACK TO</a>
         </div>
     </div>

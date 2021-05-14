@@ -51,4 +51,27 @@ public class CartService {
         }
         return cost;
     }
+
+    public String deleteCartItemByBookId(HttpServletRequest req) {
+        Cookie[] cookies = req.getCookies();
+        Cookie cartItems = null;
+        String res = "";
+
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("cart")) {
+                cartItems = cookie;
+                break;
+            }
+        }
+
+        int k = 0;
+        for (String cartItemsSrt : cartItems.getValue().split("-")) {
+            if (k == 0 && cartItemsSrt.equals(req.getParameter("book_id"))) {
+                k++;
+                continue;
+            }
+            res = res.equals("") ? cartItemsSrt : res + "-" + cartItemsSrt;
+        }
+        return res;
+    }
 }

@@ -27,7 +27,9 @@ public class OrderWithItemsService {
             List<OrderItem> orderItems = orderItemService.orderItemList(Integer.toString(order.getId()));
             List<Book> books = new ArrayList<>();
 
+            System.out.println("order Id: " + order.getId());
             for (OrderItem orderItem : orderItems) {
+                System.out.println("orderItem id: " + orderItem.getOrderId() + "\tBookId: " + orderItem.getBookId());
                 books.add(bookService.getBookById(orderItem.getBookId()));
             }
             orderWithItemsList.add(getModelOrderWithItems(order, orderItems, books));
